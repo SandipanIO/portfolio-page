@@ -40,7 +40,6 @@
    --fs-45: 2.8125rem;
   
    /* Setting font sizes for screen sizes 320px and above */
-   --fs-body: var(--fs-15);
    --fs-heading-1: var(--fs-35);
    --fs-heading-2: var(--fs-30);
    --fs-heading-3: var(--fs-20);
@@ -290,12 +289,12 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
-   padding-block: 2em;
+   padding-block: 2em 1em;
 }
 
 .logo {
    font-family: var(--ff-primary);
-   font-size: var(--fs-25);
+   font-size: var(--fs-22);
    font-weight: 500;
    color: var(--color-primary);
 }
@@ -308,6 +307,11 @@ body {
 
    .header__wrapper {
       justify-content: space-between;
+      padding-block: 2em;
+   }
+
+   .logo {
+      font-size: var(--fs-25);
    }
 
    .social-icons {
@@ -348,7 +352,22 @@ body {
 }
 
 .hero__image-box {
-   display: none;
+   grid-row: 1 / 2;
+   max-width: var(--width-650);
+   margin-inline: auto;
+}
+
+.hero__img {
+   width: calc(200rem / 16);
+   border-radius: 50%;
+}
+
+@media (min-width: 28em) and (max-width: 60em) {
+
+   .hero__image-box {
+      display: none;
+   }
+   
 }
 
 @media (min-width: 28em) {
@@ -373,10 +392,10 @@ body {
    }
 
    .hero__image-box {
-      display: block;
+      grid-row: unset;
       justify-self: center;
    }
-   
+
    .hero__img {
       width: calc(350rem / 16);
       border-radius: 50%;
