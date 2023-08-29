@@ -1,0 +1,516 @@
+/* --------------------------------------------------------------------------- */
+/* CSS Variables */
+/* --------------------------------------------------------------------------- */
+
+:root {
+
+   /* Width */
+   --max-width: calc(1100rem / 16);
+   --width-650: calc(650rem / 16);
+
+   /* Colors */
+   --color-white: #fff;
+   --color-white-200: #f1f1f1;
+   --color-black: #000;
+
+   --color-gray-400: #222;
+   --color-gray-200: #444;
+   --color-light-gray: #f2f0f0;
+
+   --color-primary: #34462b;
+   --color-secondary: #c6dcca;
+   --color-bg: #eaecdf;
+   --color-text: #090906;
+
+   /* Font Family */
+   --ff-primary: "Poppins", sans-serif;
+   --ff-secondary: "Asap Condensed", sans-serif;
+
+   /* Font Sizes */
+   --fs-14: 0.875rem;
+   --fs-15: 0.9375rem;
+   --fs-16: 1rem;
+   --fs-18: 1.125rem;
+   --fs-20: 1.25rem;
+   --fs-22: 1.375rem;
+   --fs-25: 1.5625rem;
+   --fs-30: 1.875rem;
+   --fs-35: 2.1875rem;
+   --fs-40: 2.5rem;
+   --fs-45: 2.8125rem;
+  
+   /* Setting font sizes for screen sizes 320px and above */
+   --fs-body: var(--fs-15);
+   --fs-heading-1: var(--fs-35);
+   --fs-heading-2: var(--fs-30);
+   --fs-heading-3: var(--fs-20);
+}
+
+/* Setting font sizes for screen sizes 736px and above */
+@media (min-width: 28em) {
+   :root {
+      --fs-body: var(--fs-16);
+      --fs-heading-1: var(--fs-40);
+      --fs-heading-2: var(--fs-35);
+      --fs-heading-3: var(--fs-22);
+    }
+ }
+
+/* Setting font sizes for screen sizes 736px and above */
+@media (min-width: 60em) {
+  :root {
+      --fs-heading-1: var(--fs-45);
+      --fs-heading-2: var(--fs-40);
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* CSS Reset */
+/* --------------------------------------------------------------------------- */
+
+/* Box sizing rules */
+html {
+   box-sizing: border-box;
+}
+ 
+*,
+*::before,
+*::after {
+   box-sizing: inherit;
+}
+ 
+/* Remove default margin and padding */
+* {
+   margin: 0;
+   padding: 0;
+}
+ 
+/* Set core root defaults */
+html {
+   scroll-behavior: smooth;
+}
+ 
+/* Set core body defaults */
+body {
+   min-height: 100vh;
+   line-height: 1.5;
+}
+ 
+/* Make images easier to work with */
+img,
+picture,
+figure,
+svg,
+video {
+   display: block;
+   max-width: 100%;
+}
+ 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+   font: inherit;
+}
+ 
+/* Remove list styles on ul, ol elements with a list role */
+ul[role=list],
+ol[role=list] {
+   list-style: none;
+}
+ 
+/* Added to body. This makes transitions only after page load. Later removed using JS */
+.preload * {
+   -webkit-transition: none !important;
+   -moz-transition: none !important;
+   -ms-transition: none !important;
+   -o-transition: none !important;
+   transition: none !important;
+}
+ 
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+   html:focus-within {
+      scroll-behavior: auto;
+   }
+   
+   *,
+   *::before,
+   *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* Utility Classes */
+/* --------------------------------------------------------------------------- */
+
+.body__overflow-hidden {
+   overflow: hidden;
+}
+
+.skip-to-main-content {
+   color: white;
+   background-color: black;
+   position: absolute;
+   top: 0;
+   left: 0.5rem;
+   padding: 1em;
+   z-index: 999;
+   transform: translateY(-120%);
+   opacity: 0;
+   transition: all 0.3s;
+}
+ 
+.skip-to-main-content:focus {
+   transform: translateY(0);
+   opacity: 1;
+}
+
+.container {
+   width: min(var(--max-width), 100% - 2em);
+   margin-inline: auto;
+}
+
+.section-padding {
+   padding-block: 5em;
+}
+
+.link:link,
+.link:visited {
+   color: var(--color-primary);
+   font-size: var(--fs-18);
+   font-weight: 500;
+}
+
+.link:hover,
+.link:active {
+   text-decoration: none;
+}
+
+.link__white:link,
+.link__white:visited {
+   color: var(--color-white-200);
+   font-size: var(--fs-15);
+   font-weight: 400;
+}
+
+@media (min-width: 25em) {
+   .container {
+      width: min(var(--max-width), 100% - 3em);
+      margin-inline: auto;
+   }
+   
+   .section-padding {
+      padding-block: 6em;
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* Buttons */
+/* --------------------------------------------------------------------------- */
+
+.btn__primary,
+.btn__contact {
+   color: var(--color-primary);
+   font-size: var(--fs-15);
+   font-weight: 500;
+   text-decoration: none;
+   text-transform: uppercase;
+   padding: 0.75em 2em;
+   border: 1px solid var(--color-primary);
+   cursor: pointer;
+   background-color: transparent;
+   transition: all 0.2s;
+}
+
+.btn__contact {
+   display: block;
+   margin-inline: auto;
+   margin-top: 2em;
+}
+
+.btn__primary:hover,
+.btn__contact:hover {
+   color: var(--color-white-200);
+   background-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------------------------- */
+/* General Styles */
+/* --------------------------------------------------------------------------- */
+
+body {
+   font-family: var(--ff-primary);
+   font-size: var(--fs-body);
+   font-weight: 400;
+   color: var(--color-text);
+}
+
+/* --------------------------------------------------------------------------- */
+/* Typography */
+/* --------------------------------------------------------------------------- */
+
+.heading-1,
+.heading-2,
+.heading-3 {
+   font-family: var(--ff-secondary);
+   font-weight: 500;
+   color: var(--color-primary);
+}
+
+.heading-1 {
+   font-size: var(--fs-heading-1);
+   margin-block: 0.25em;
+}
+
+.heading-2 {
+   font-size: var(--fs-heading-2);
+   margin-bottom: 1.5em;
+   text-align: center;
+}
+
+.heading-3 {
+   font-size: var(--fs-heading-3);
+}
+
+/* --------------------------------------------------------------------------- */
+/* Header */
+/* --------------------------------------------------------------------------- */
+
+.header {
+   background-color: var(--color-bg);
+}
+
+.header__wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-block: 2em;
+}
+
+.logo {
+   font-family: var(--ff-primary);
+   font-size: var(--fs-25);
+   font-weight: 500;
+   color: var(--color-primary);
+}
+
+.social-icons {
+   display: none;
+}
+
+@media (min-width: 46em) {
+
+   .header__wrapper {
+      justify-content: space-between;
+   }
+
+   .social-icons {
+      display: flex;
+      gap: 3em;
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* Hero */
+/* --------------------------------------------------------------------------- */
+
+.hero {
+   background-color: var(--color-bg);
+   padding-block: 2em 5em;
+}
+
+.hero__wrapper {
+   display: grid;
+   gap: 3em;
+}
+
+.hero__content-box {
+   max-width: var(--width-650);
+   margin-inline: auto;
+   align-self: center;
+}
+
+.hero__subheading {
+   font-size: var(--fs-18);
+}
+
+.hero__buttons {
+   display: flex;
+   flex-direction: column;
+   gap: 2em;
+   margin-block: 2em 0;
+}
+
+.hero__image-box {
+   display: none;
+}
+
+@media (min-width: 28em) {
+
+   .hero__subheading {
+      font-size: var(--fs-22);
+   }
+
+   .hero__buttons {
+      flex-direction: row;
+   }
+}
+
+@media (min-width: 60em) {
+
+   .hero {
+      padding-block: 4em 8em;
+   }
+
+   .hero__wrapper {
+      grid-template-columns: 55% 1fr;
+   }
+
+   .hero__image-box {
+      display: block;
+      justify-self: center;
+   }
+   
+   .hero__img {
+      width: calc(350rem / 16);
+      border-radius: 50%;
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* Projects */
+/* --------------------------------------------------------------------------- */
+
+.projects__wrapper {
+   display: grid;
+   gap: 3em;
+}
+
+.project-card {
+   max-width: var(--width-650);
+   margin-inline: auto;
+   padding: 1.25em;
+   border-radius: 0.5em;
+   box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+}
+
+.project-card__img {
+   border-radius: 0.5em;
+   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.project-card__content-box {
+   margin-block: 2em;
+}
+
+.project-card__description {
+   margin-block: 0.75em;
+}
+
+.project-cards__link {
+   font-size: var(--fs-18);
+   font-family: var(--ff-secondary);
+   font-weight: 500;
+   color: var(--color-primary);
+}
+
+.project-cards__link:hover {
+   text-decoration: none;
+}
+
+@media (min-width: 60em) {
+   .projects__wrapper {
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+   }
+}
+
+/* --------------------------------------------------------------------------- */
+/* Contact */
+/* --------------------------------------------------------------------------- */
+
+.contact {
+   padding-block: 4em 5em;
+   background-color: var(--color-bg);
+}
+
+.form {
+   max-width: 43em;
+   margin-inline: auto;
+}
+
+.form__label,
+.form__input,
+.form__textarea {
+   display: block;
+   width: 100%;
+}
+
+.form__label {
+   font-weight: 500;
+   margin-bottom: 0.5em;
+}
+
+.form__input,
+.form__textarea {
+   padding: 0.5em;
+   border: 1px solid #bcb9b9;
+   margin-bottom: 1.25em;
+}
+
+@media (min-width: 28em) {
+   
+   .contact {
+      padding-block: 4em 8em;
+   }
+
+}
+
+@media (min-width: 40em) {
+   
+   .form__input-box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5em;
+   }
+
+}
+
+/* --------------------------------------------------------------------------- */
+/* Footer */
+/* --------------------------------------------------------------------------- */
+
+.footer {
+   background-color: var(--color-primary);
+   padding-block: 1.5em;
+}
+
+.footer__wrapper {
+   display: flex;
+   flex-direction: column-reverse;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1em;
+}
+
+.footer__copyright {
+   font-size: var(--fs-15);
+   color: var(--color-white);
+}
+
+.footer__social-icons {
+   display: flex;
+   gap: 1em;
+}
+
+@media (min-width: 40em) {
+   .footer__wrapper {
+      flex-direction: row;
+   }
+}
