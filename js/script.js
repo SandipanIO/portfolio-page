@@ -32,6 +32,7 @@ const success = () => {
    setTimeout(() => {
 
       success.style.display = 'none';
+      document.querySelector("#contact-form").reset();
    
    }, 5000);
 
@@ -48,6 +49,7 @@ const error = err => {
    setTimeout(() => {
       
       error.style.display = 'none';
+      document.querySelector("#contact-form").reset();
 
    }, 5000);
 
