@@ -467,7 +467,7 @@ body {
 .contact__error {
    font-size: var(--fs-15);
    padding: 1em;
-   margin-block: 1.5em;
+   margin-block: 2.5em;
    display: none;
 }
 
