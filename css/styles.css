@@ -367,10 +367,14 @@ body {
    .hero__image-box {
       display: none;
    }
-   
+
 }
 
 @media (min-width: 28em) {
+
+   .hero {
+      padding-block: 4em 8em;
+   }
 
    .hero__subheading {
       font-size: var(--fs-22);
@@ -382,10 +386,6 @@ body {
 }
 
 @media (min-width: 60em) {
-
-   .hero {
-      padding-block: 4em 8em;
-   }
 
    .hero__wrapper {
       grid-template-columns: 55% 1fr;
@@ -457,6 +457,26 @@ body {
 .contact {
    padding-block: 4em 5em;
    background-color: var(--color-bg);
+}
+
+.contact__hidden {
+   display: none;
+}
+
+.contact__success,
+.contact__error {
+   font-size: var(--fs-15);
+   padding: 1em;
+   margin-block: 1.5em;
+   display: none;
+}
+
+.contact__success {
+   background-color: rgba(0, 128, 0, 0.3);
+}
+
+.contact__error {
+   background-color: rgba(255, 0, 0, 0.3);
 }
 
 .form {
