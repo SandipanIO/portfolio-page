@@ -28,8 +28,6 @@ const success = () => {
 
    success.innerHTML = `Thank you! I'll get in touch with you soon.`;
    success.style.display = 'block';
-   
-   formDefaultState();
 
    setTimeout(() => {
 
@@ -46,8 +44,6 @@ const error = err => {
 
    error.innerHTML = `${err}`;
    error.style.display = 'block';
-   
-   formDefaultState();
 
    setTimeout(() => {
       
