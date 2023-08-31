@@ -13,7 +13,6 @@
    --color-white-200: #f1f1f1;
 
    --color-primary: #34462b;
-   --color-secondary: #c6dcca;
    --color-bg: #eaecdf;
    --color-text: #090906;
 
@@ -385,6 +384,10 @@ body {
 /* Projects */
 /* --------------------------------------------------------------------------- */
 
+.projects {
+   padding-block: 5em;
+}
+
 .projects__wrapper {
    display: grid;
    gap: 3em;
@@ -413,6 +416,13 @@ body {
 
 .project-cards__link {
    font-family: var(--ff-secondary);
+}
+
+@media (min-width: 25em) {
+   
+   .projects {
+      padding-block: 6em;
+   }
 }
 
 @media (min-width: 60em) {
