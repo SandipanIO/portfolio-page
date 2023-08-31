@@ -167,9 +167,9 @@ ol[role=list] {
 
 .link:link,
 .link:visited {
-   color: var(--color-primary);
    font-size: var(--fs-18);
    font-weight: 500;
+   color: var(--color-primary);
 }
 
 .link:hover,
@@ -412,14 +412,7 @@ body {
 }
 
 .project-cards__link {
-   font-size: var(--fs-18);
    font-family: var(--ff-secondary);
-   font-weight: 500;
-   color: var(--color-primary);
-}
-
-.project-cards__link:hover {
-   text-decoration: none;
 }
 
 @media (min-width: 60em) {
