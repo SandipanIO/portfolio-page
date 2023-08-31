@@ -11,11 +11,6 @@
    /* Colors */
    --color-white: #fff;
    --color-white-200: #f1f1f1;
-   --color-black: #000;
-
-   --color-gray-400: #222;
-   --color-gray-200: #444;
-   --color-light-gray: #f2f0f0;
 
    --color-primary: #34462b;
    --color-secondary: #c6dcca;
@@ -27,7 +22,6 @@
    --ff-secondary: "Asap Condensed", sans-serif;
 
    /* Font Sizes */
-   --fs-14: 0.875rem;
    --fs-15: 0.9375rem;
    --fs-16: 1rem;
    --fs-18: 1.125rem;
@@ -148,10 +142,6 @@ ol[role=list] {
 /* Utility Classes */
 /* --------------------------------------------------------------------------- */
 
-.body__overflow-hidden {
-   overflow: hidden;
-}
-
 .skip-to-main-content {
    color: white;
    background-color: black;
@@ -173,10 +163,6 @@ ol[role=list] {
 .container {
    width: min(var(--max-width), 100% - 2em);
    margin-inline: auto;
-}
-
-.section-padding {
-   padding-block: 5em;
 }
 
 .link:link,
@@ -203,18 +189,13 @@ ol[role=list] {
       width: min(var(--max-width), 100% - 3em);
       margin-inline: auto;
    }
-   
-   .section-padding {
-      padding-block: 6em;
-   }
 }
 
 /* --------------------------------------------------------------------------- */
 /* Buttons */
 /* --------------------------------------------------------------------------- */
 
-.btn__primary,
-.btn__contact {
+.btn {
    color: var(--color-primary);
    font-size: var(--fs-15);
    font-weight: 500;
@@ -227,16 +208,15 @@ ol[role=list] {
    transition: all 0.2s;
 }
 
+.btn:hover {
+   color: var(--color-white-200);
+   background-color: var(--color-primary);
+}
+
 .btn__contact {
    display: block;
    margin-inline: auto;
    margin-top: 2em;
-}
-
-.btn__primary:hover,
-.btn__contact:hover {
-   color: var(--color-white-200);
-   background-color: var(--color-primary);
 }
 
 /* --------------------------------------------------------------------------- */
@@ -293,7 +273,6 @@ body {
 }
 
 .logo {
-   font-family: var(--ff-primary);
    font-size: var(--fs-22);
    font-weight: 500;
    color: var(--color-primary);
