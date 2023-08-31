@@ -198,6 +198,7 @@ ol[role=list] {
    color: var(--color-primary);
    font-size: var(--fs-15);
    font-weight: 500;
+   text-align: center;
    text-decoration: none;
    text-transform: uppercase;
    padding: 0.75em 2em;
@@ -437,7 +438,7 @@ body {
 /* --------------------------------------------------------------------------- */
 
 .contact {
-   padding-block: 4em 5em;
+   padding-block: 5em;
    background-color: var(--color-bg);
 }
 
@@ -488,7 +489,7 @@ body {
 @media (min-width: 28em) {
    
    .contact {
-      padding-block: 4em 8em;
+      padding-block: 6em 8em;
    }
 
 }
