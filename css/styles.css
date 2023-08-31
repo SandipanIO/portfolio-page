@@ -208,15 +208,19 @@ ol[role=list] {
    transition: all 0.2s;
 }
 
-.btn:hover {
-   color: var(--color-white-200);
-   background-color: var(--color-primary);
-}
-
 .btn__contact {
    display: block;
    margin-inline: auto;
    margin-top: 2em;
+}
+
+@media (min-width: 60em) {
+
+   .btn:hover {
+      color: var(--color-white-200);
+      background-color: var(--color-primary);
+   }
+
 }
 
 /* --------------------------------------------------------------------------- */
